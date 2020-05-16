@@ -4,32 +4,29 @@ import Select from 'react-select';
 
 class Book extends Component{
     state={
-        value: {label: this.props.bookShelf, value:this.props.bookShelf } 
+        value: {label: this.props.book.shelf, value:this.props.book.shelf } 
     }
     options=[
-        {label: "Currently Reading", value: "CurrentlyReading"},
+        {label: "Currently Reading", value: "currentlyReading"},
         {label: "Finished Reading", value: "read"},
-        {label: "Want to read", value: "wantToRead"}
+        {label: "Want to read", value: "wantToRead"},
+        {label: "None", value: ""}
     ]
-    updateShelf(book, shelf){
-        booksApi.update(book, shelf).then(res=>(console.log(res)));
-    }
 
     handleChange(value){
         this.setState(()=>({
             value
         }))
-        console.log(this.state.value)
-        this.updateShelf(this.props.book, JSON.stringify(value.value))
+        this.props.onUpdateShelf(this.props.book, value.value)
     }
 
     render(){
-        const { bookTitle, bookAuthor, imageLink } = this.props
+        const { book } = this.props
         return(
             <div>
-                <img src={imageLink} alt={bookTitle} className="book-image"></img>
-                <h4>{bookTitle}</h4>
-                {bookAuthor.map((author)=>(
+                <img src={book.imageLinks.thumbnail} alt={book.title} className="book-image"></img>
+                <h4>{book.title}</h4>
+                {book.authors.map((author)=>(
                     <p key={author}>{author}</p>
                 ))}
 
