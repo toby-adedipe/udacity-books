@@ -8,6 +8,8 @@
 h1{
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
+  font-size: 1.8rem;
+  text-align: center;
 }
 
 .App .App-header{
@@ -22,6 +24,7 @@ li{
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  margin: 0 0 2rem 0;
 }
 .books-div div h4{
   width: 14rem;

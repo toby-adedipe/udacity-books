@@ -14,9 +14,8 @@ class CurrentlyReading extends Component{
             }))
             console.log(data);
           });
+    }
 
-        
-      }
     render(){
         const { books } = this.state
         return(
@@ -27,9 +26,12 @@ class CurrentlyReading extends Component{
                         books.map((book)=>(
                             book.shelf === 'currentlyReading' &&
                             <Book key={book.id}
+                                book={book}
                                 bookTitle={book.title}
                                 bookAuthor={book.authors}
                                 imageLink={book.imageLinks.thumbnail}
+                                bookShelf={book.shelf}
+                                bookId={book.id}
                             />
                         ))
                     }

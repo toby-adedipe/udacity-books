@@ -26,9 +26,11 @@ class WantToRead extends Component{
                         books.map((book)=>(
                             book.shelf === 'wantToRead' &&
                             <Book key={book.id}
+                                book={book}
                                 bookTitle={book.title}
                                 bookAuthor={book.authors}
                                 imageLink={book.imageLinks.thumbnail}
+                                bookShelf={book.shelf}
                             />
                         ))
                     }
