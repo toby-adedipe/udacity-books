@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import * as booksApi from './BooksAPI';
 import Select from 'react-select';
 
 class Book extends Component{
