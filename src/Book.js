@@ -25,7 +25,7 @@ class Book extends Component{
             <div>
                 <img src={book.imageLinks ? book.imageLinks.thumbnail : 'https://via.placeholder.com/224x298'} alt={book.title} className="book-image"></img>
                 <h4>{book.title}</h4>
-                {book.authors.map((author)=>(
+                {book.authors && book.authors.map((author)=>(
                     <p key={author}>{author}</p>
                 ))}
 

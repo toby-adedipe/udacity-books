@@ -24,11 +24,17 @@ class  App extends Component {
     booksApi.update(book, shelf)
     .then(res=>{
       let objIndex = this.state.books.findIndex((obj)=> obj.id === book.id);
-      let oldState = this.state.books;
-      oldState[objIndex].shelf = shelf;
-      this.setState(()=>({
-        state: oldState
-      }))
+      if(objIndex === -1){
+        this.setState((prevState)=>({
+          books:[...prevState.books, [book]]
+        }))
+      }else{
+        let oldState = this.state.books;
+        oldState[objIndex].shelf = shelf;
+        this.setState(()=>({
+          state: oldState
+        }))
+        }
     });
   }
 
