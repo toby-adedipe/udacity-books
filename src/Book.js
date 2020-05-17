@@ -23,7 +23,7 @@ class Book extends Component{
         const { book } = this.props
         return(
             <div>
-                <img src={book.imageLinks.thumbnail} alt={book.title} className="book-image"></img>
+                <img src={book.imageLinks ? book.imageLinks.thumbnail : 'https://via.placeholder.com/224x298'} alt={book.title} className="book-image"></img>
                 <h4>{book.title}</h4>
                 {book.authors.map((author)=>(
                     <p key={author}>{author}</p>

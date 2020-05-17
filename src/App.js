@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './Header';
 import Shelf from './Shelf';
+import Search from './Search';
 import { Route } from 'react-router-dom';
 import * as booksApi from './BooksAPI';
 
@@ -42,6 +43,13 @@ class  App extends Component {
               onUpdateShelf={(book, shelf)=>this.updateShelf(book, shelf)}
             />
           </div>
+        )}
+        />
+        <Route path="/search" render={()=>(
+          <Search
+            books={this.state.books} 
+            onUpdateShelf={(book, shelf)=>this.updateShelf(book,shelf)}
+          />
         )}
         />
       </div>

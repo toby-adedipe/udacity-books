@@ -6,7 +6,7 @@ class Shelf extends Component{
     render(){
         const { books, onUpdateShelf} = this.props
         return(
-            <div>
+            <div  className="container">
                 <h1>Currently Reading</h1>
                 {books.map((book)=>(
                     book.shelf === 'currentlyReading' &&
