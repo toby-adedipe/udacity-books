@@ -14,6 +14,7 @@ class Shelf extends Component{
                         <Book key={book.id}
                             book={book}
                             onUpdateShelf={onUpdateShelf}
+                            label = {"Currently Reading"}
                         />
                     ))}
                 </div>
@@ -24,6 +25,7 @@ class Shelf extends Component{
                         <Book key={book.id}
                             book={book}
                             onUpdateShelf={onUpdateShelf}
+                            label = {"Want to Read"}
                         />
                     ))}
                 </div>
@@ -34,6 +36,7 @@ class Shelf extends Component{
                         <Book key={book.id}
                             book={book}
                             onUpdateShelf={onUpdateShelf}
+                            label = {"Finished Reading"}
                         />
                     ))}
                 </div>

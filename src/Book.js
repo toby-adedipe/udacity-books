@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import Select from 'react-select';
-import Background from './icons/arrow-drop-down.svg';
+
 class Book extends Component{
     state={
-        value: {label: this.props.book.shelf, value:this.props.book.shelf } 
+        value: {label: this.props.label, value:this.props.book.shelf } 
     }
     options=[
         {label: "Currently Reading", value: "currentlyReading"},
-        {label: "Want to read", value: "wantToRead"},
+        {label: "Want to Read", value: "wantToRead"},
         {label: "Finished Reading", value: "read"},
         {label: "None", value: ""}
     ]
@@ -29,7 +29,6 @@ class Book extends Component{
             }),
             control: (provided) => ({
               ...provided,
-              backgroundImage: `url(${Background})`
             })
           }
 
