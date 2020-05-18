@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
 class Book extends Component{
-    
-    handleChange(value){
-        this.props.onUpdateShelf(this.props.book, value.value)
+
+    handleChange(event, book){
+        this.props.onUpdateShelf(book, event.target.value)
     }
 
     render(){
@@ -16,7 +16,7 @@ class Book extends Component{
                 {book.authors && book.authors.map((author)=>(
                     <p key={author}>{author}</p>
                 ))}
-                <select onChange={value => this.handleChange(value)} value={book.shelf}>
+                <select onChange={event => this.handleChange(event, book)} value={book.shelf}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
