@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Select from 'react-select';
 
 class Book extends Component{
     state={
@@ -9,7 +8,7 @@ class Book extends Component{
         {label: "Currently Reading", value: "currentlyReading"},
         {label: "Want to Read", value: "wantToRead"},
         {label: "Finished Reading", value: "read"},
-        {label: "None", value: ""}
+        {label: "None", value: "none"}
     ]
 
     handleChange(value){
@@ -21,33 +20,21 @@ class Book extends Component{
 
     render(){
         const { book } = this.props
-        const customStyles = {
-            option: (provided, state) => ({
-              ...provided,
-              color: state.isSelected ? 'darkred' : 'black',
-              backgroundColor: state.isSelected ? 'lavender' : 'white'
-            }),
-            control: (provided) => ({
-              ...provided,
-              cursor: 'pointer'
-            })
-          }
 
         return(
-            <div className="book-section">
+            <div className="book-section dropdown-btn">
                 <img src={book.imageLinks ? book.imageLinks.thumbnail : 'https://via.placeholder.com/224x298'} alt={book.title} className="book-image"></img>
                 <h4>{book.title}</h4>
                 {book.authors && book.authors.map((author)=>(
                     <p key={author}>{author}</p>
                 ))}
-
-                <Select 
-                    options={this.options}
-                    value={this.state.value}
-                    onChange={value => this.handleChange(value)}
-                    defaultValue={this.state.value}
-                    styles={ customStyles }
-                />
+                <select onChange={value => this.handleChange(value)} value={book.shelf}>
+                    <option value="move" disabled>Move to...</option>
+                    <option value="currentlyReading">Currently Reading</option>
+                    <option value="wantToRead">Want to Read</option>
+                    <option value="read">Read</option>
+                    <option value="none">None</option>
+                </select>
             </div>
         )
     }
