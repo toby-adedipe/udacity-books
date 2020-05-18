@@ -29,6 +29,7 @@ class Book extends Component{
             }),
             control: (provided) => ({
               ...provided,
+              cursor: 'pointer'
             })
           }
 

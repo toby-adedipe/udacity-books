@@ -21,9 +21,8 @@ class Search extends Component{
                 this.setState(()=>({
                     result:books
                 }))
-                console.log(this.state.result)
             })
-            .catch(err=>console.log(err));
+            .catch();
         }else{
             this.setState(()=>({
                 result:[]
@@ -48,7 +47,7 @@ class Search extends Component{
                         >
                     </input>
                 </div>
-                <div className="container">
+                <div className="search-books-div">
                     {this.state.error.length > 0 &&
                         <p>{this.state.error}</p>
                     }
