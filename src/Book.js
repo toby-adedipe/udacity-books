@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import Select from 'react-select';
-
+import Background from './icons/arrow-drop-down.svg';
 class Book extends Component{
     state={
         value: {label: this.props.book.shelf, value:this.props.book.shelf } 
     }
     options=[
         {label: "Currently Reading", value: "currentlyReading"},
-        {label: "Finished Reading", value: "read"},
         {label: "Want to read", value: "wantToRead"},
+        {label: "Finished Reading", value: "read"},
         {label: "None", value: ""}
     ]
 
@@ -21,8 +21,20 @@ class Book extends Component{
 
     render(){
         const { book } = this.props
+        const customStyles = {
+            option: (provided, state) => ({
+              ...provided,
+              color: state.isSelected ? 'darkred' : 'black',
+              backgroundColor: state.isSelected ? 'lavender' : 'white'
+            }),
+            control: (provided) => ({
+              ...provided,
+              backgroundImage: `url(${Background})`
+            })
+          }
+
         return(
-            <div>
+            <div className="book-section">
                 <img src={book.imageLinks ? book.imageLinks.thumbnail : 'https://via.placeholder.com/224x298'} alt={book.title} className="book-image"></img>
                 <h4>{book.title}</h4>
                 {book.authors && book.authors.map((author)=>(
@@ -34,6 +46,7 @@ class Book extends Component{
                     value={this.state.value}
                     onChange={value => this.handleChange(value)}
                     defaultValue={this.state.value}
+                    styles={ customStyles }
                 />
             </div>
         )

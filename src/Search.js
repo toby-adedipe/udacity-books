@@ -35,17 +35,20 @@ class Search extends Component{
         const { onUpdateShelf } = this.props;
         return(
             <div>
-                <Link to="/">
-                    <i className="fas fa-long-arrow-alt-left"></i>
-                </Link>
-                <input 
-                    type="text"
-                    className="search-input" 
-                    value={this.state.input} 
-                    onChange={event=>(this.onChange(event.target.value))}
-                    >
-                </input>
-                <div>
+                <div className="search-header">
+                    <Link to="/">
+                        <i className="fas fa-long-arrow-alt-left"></i>
+                    </Link>
+                    <input 
+                        placeholder="Search for Book Title or Author"
+                        type="text"
+                        className="search-input" 
+                        value={this.state.input} 
+                        onChange={event=>(this.onChange(event.target.value))}
+                        >
+                    </input>
+                </div>
+                <div className="container">
                     {this.state.error.length > 0 &&
                         <p>{this.state.error}</p>
                     }

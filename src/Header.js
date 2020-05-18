@@ -6,7 +6,7 @@ function Header(){
         <header className="App-header">
           <div className="App-div">
             <Link 
-            to='/'>
+            to='/' id="logo">
               My-books
             </Link>
             <Link

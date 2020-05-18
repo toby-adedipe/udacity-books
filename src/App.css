@@ -2,34 +2,44 @@
   padding: 0;
   margin: 0;
 }
+#logo{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: darkred;;
+}
 .App-header{
   width: 100vw;
   height: 50px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  position: fixed;
+  background-color: lavender;
+  position: absolute;
+  top: 0;
 }
 .App-div{
   display: flex;
   justify-content: space-between;
-  z-index: 2;
   margin: 1rem 5vw 0 5vw;
 }
 .container{
-  padding: 50px 0 0 0;
+  padding-top: 50px;
   margin: 0 5vw 0 5vw;
 }
-
+.books-div>div>div{
+  width:14rem;
+}
 .books-div{
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
   margin: 0 0 2rem 0;
 }
-.books-div div h4{
+.books-div .books-section{
+  width: 14rem;
+}
+.books-div h4{
   width: 14rem;
   padding: .25rem;
 }
-.books-div div p{
+.books-div p{
   padding: 0 0 2px .25rem;
 }
 .book-image{
@@ -40,8 +50,8 @@
 }
 h1{
   font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 1.8rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   text-align: center;
 }
 li{
@@ -51,11 +61,22 @@ a{
   text-decoration: none;
   color: inherit;
 }
+
+
+/* Search Page */
 .fa-long-arrow-alt-left{
-  font-size: 2rem;
+  margin: 0 1rem 0 1rem;
+  font-size: 1.5rem;
+}
+.search-header{
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.search-header input{
+  padding: 2px;
 }
 .search-input{
   height: 44px;
-  width:90vw;
+  width: 80vw;
   font-size: 1.5rem;
+  border:0;
 }
