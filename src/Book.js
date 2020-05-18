@@ -1,20 +1,8 @@
 import React, {Component} from 'react';
 
 class Book extends Component{
-    state={
-        value: {label: this.props.label, value:this.props.book.shelf } 
-    }
-    options=[
-        {label: "Currently Reading", value: "currentlyReading"},
-        {label: "Want to Read", value: "wantToRead"},
-        {label: "Finished Reading", value: "read"},
-        {label: "None", value: "none"}
-    ]
-
+    
     handleChange(value){
-        this.setState(()=>({
-            value
-        }))
         this.props.onUpdateShelf(this.props.book, value.value)
     }
 
