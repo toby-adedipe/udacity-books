@@ -11,13 +11,11 @@ class  App extends Component {
     books:[]
   }
 
-  componentDidMount(){
-    booksApi.getAll()
-      .then((data)=>{
-        this.setState(()=>({
-            books:data
-        }))
-      });
+   async componentDidMount(){
+     const books = await booksApi.getAll();
+     this.setState({
+       books
+     });
   }
 
   updateShelf(book, shelf){

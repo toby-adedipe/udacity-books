@@ -22,7 +22,8 @@ class Shelf extends Component{
                 <div className="books-div">
                     {books.map((book)=>(
                         book.shelf === 'wantToRead' &&
-                        <Book key={book.id}
+                        <Book 
+                            key={book.id}
                             book={book}
                             onUpdateShelf={onUpdateShelf}
                             label = {"Want to Read"}

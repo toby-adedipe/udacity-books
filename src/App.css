@@ -110,7 +110,9 @@ input:focus, select:focus{
 .search-books-div p{
   padding: 0 0 2px .25rem;
 }
-
+.error-message{
+  color: darkred;
+}
 @media (max-width: 400px){
   /* Main Page */
 

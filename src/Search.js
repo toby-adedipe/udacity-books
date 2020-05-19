@@ -13,14 +13,23 @@ class Search extends Component{
         if(input.length > 0){
             booksApi.search(input)
             .then(res=>{
-                const books = res.map((book)=>{
-                    const bookOnShelf = this.props.books.filter(bookOnShelf=> bookOnShelf.id === book.id);
-                    book.shelf = "none"
-					return bookOnShelf.length > 0 ? bookOnShelf[0] : book;
-                })
-                this.setState(()=>({
-                    result:books
-                }))
+                if(res.error){
+                    this.setState({
+                        result:[],
+                        error: "We are sorry, we can't find your book"
+                    })
+                }else{
+                    const books = res.map((book)=>{
+                        if (res){}
+                        const bookOnShelf = this.props.books.filter(bookOnShelf=> bookOnShelf.id === book.id);
+                        book.shelf = "none"
+                        return bookOnShelf.length > 0 ? bookOnShelf[0] : book;
+                    })
+                    this.setState(()=>({
+                        result:books,
+                        error:''
+                    }))
+                }
             })
             .catch();
         }else{
@@ -49,11 +58,12 @@ class Search extends Component{
                 </div>
                 <div className="search-books-div">
                     {this.state.error.length > 0 &&
-                        <p>{this.state.error}</p>
+                        <p className="error-message">{this.state.error}</p>
                     }
                     {this.state.result.length > 0 &&
                     this.state.result.map((book)=>(
-                        <Book 
+                        <Book
+                            key={book.id} 
                             book={ book } 
                             onUpdateShelf = {onUpdateShelf}
                         />
