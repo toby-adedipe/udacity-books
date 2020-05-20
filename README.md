@@ -1,4 +1,4 @@
-# MY-BOOKS PROJECT
+# My-Books Project
 
 This project is website that functions like a librabry. You can search for a book and add it to the library under 3 sections, the ones you "Want to read", the ones you've "read" and the ones you are "currently reading".
 
@@ -65,3 +65,4 @@ That list of terms are the _only_ terms that will work with the backend. So avoi
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
+Hosted on the web at [My-Boooks](https://my-boooks.netlify.app/).
