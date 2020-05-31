@@ -4,7 +4,7 @@ This project is website that functions like a librabry. You can search for a boo
 
 ## Installation and development
 
-Get started devloping by executing the following commands:
+Get started developing by executing the following commands:
 
 To install dependencies:
 `npm install`
