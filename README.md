@@ -1,6 +1,6 @@
 # My-Books Project
 
-This project is website that functions like a librabry. You can search for a book and add it to the library under 3 sections, the ones you "Want to read", the ones you've "read" and the ones you are "currently reading".
+This project is website that functions like a library. You can search for a book and add it to the library under 3 sections, the ones you "Want to read", the ones you've "read" and the ones you are "currently reading".
 
 ## Installation and development
 
