@@ -7,7 +7,7 @@ function Header(){
           <div className="App-div">
             <Link 
             to='/' id="logo">
-              My-books
+              LAIBRY
             </Link>
             <Link
               to='/search'>

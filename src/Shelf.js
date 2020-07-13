@@ -7,7 +7,7 @@ class Shelf extends Component{
         const { books, onUpdateShelf} = this.props
         return(
             <div  className="container">
-                <h1>Currently Reading</h1>
+                <h3>Currently Reading</h3>
                 <div className="books-div">
                     {books.map((book)=>(
                         book.shelf === 'currentlyReading' &&
@@ -18,7 +18,7 @@ class Shelf extends Component{
                         />
                     ))}
                 </div>
-                <h1>Want To Read</h1>
+                <h3>Want To Read</h3>
                 <div className="books-div">
                     {books.map((book)=>(
                         book.shelf === 'wantToRead' &&
@@ -30,7 +30,7 @@ class Shelf extends Component{
                         />
                     ))}
                 </div>
-                <h1>Finished Read</h1>
+                <h3>Finished Read</h3>
                 <div className="books-div">
                     {books.map((book)=>(
                         book.shelf === 'read' &&
