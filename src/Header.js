@@ -11,7 +11,7 @@ function Header(){
             </Link>
             <Link
               to='/search'>
-              <i className="fas fa-search"></i>
+              <i className="fa fa-plus-circle" aria-hidden="true"></i>
             </Link>
           </div>
         </header>
